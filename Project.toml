@@ -1,12 +1,12 @@
 name = "TypstJlyfish"
 uuid = "95e5b356-b122-4883-a78a-3c8c946b7332"
-authors = ["Andreas Kröpelin <andreas-kroepelin@gmx.de>"]
 version = "0.1.1"
+authors = ["Andreas Kröpelin <andreas-kroepelin@gmx.de>"]
 
 [deps]
 Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
+BetterFileWatching = "c9fd44ac-77b5-486c-9482-9798bd063cc6"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
-FileWatching = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
@@ -14,8 +14,8 @@ Typst_jll = "eb4b1da6-20f6-5c66-9826-fdb8ad410d0e"
 
 [compat]
 Base64 = "1"
+BetterFileWatching = "0.1.6"
 Dates = "1"
-FileWatching = "1"
 JSON3 = "1.14"
 Logging = "1"
 Pkg = "1"
