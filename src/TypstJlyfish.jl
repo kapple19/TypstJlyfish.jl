@@ -4,7 +4,7 @@ import Typst_jll
 import JSON3
 using Base64
 import Pkg
-import FileWatching
+import BetterFileWatching
 import Dates
 
 struct SkipCodeCell end
@@ -30,7 +30,11 @@ function watch(
     typst_file;
     typst_args = "",
     evaluation_file = default_output_file(typst_file),
+    watch_path = typst_file,
 )
+    @assert isfile(typst_file) "`$typst_file` does not exist."
+    @assert ispath(watch_path) "`$watch_path` does not exist."
+
     Pkg.activate(mktempdir(prefix = "jlyfish-eval"))
 
     jlyfish_state = JlyfishState(;
@@ -55,7 +59,7 @@ function watch(
 
         @info "Waiting for input to change..."
         try
-            FileWatching.watch_file(typst_file)
+            BetterFileWatching.watch_file(watch_path)
         catch e
             if e isa InterruptException
                 break
