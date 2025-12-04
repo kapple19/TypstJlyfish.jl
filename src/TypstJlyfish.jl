@@ -20,6 +20,7 @@ const HowToProceed = Union{
     WaitForChange,
 }
 
+include("preamble.jl")
 include("output.jl")
 include("logging.jl")
 include("state.jl")
