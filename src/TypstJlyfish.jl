@@ -6,6 +6,8 @@ using Base64
 import Pkg
 import BetterFileWatching
 import Dates
+using Colors
+using StyledStrings
 
 struct SkipCodeCell end
 struct StopRunning end
@@ -26,5 +28,6 @@ include("query.jl")
 include("evaluation.jl")
 include("watch.jl")
 include("compile.jl")
+include("app.jl")
 
 end
