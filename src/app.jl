@@ -1,15 +1,15 @@
 const APP_NAME = "jlyfish"
 const PKG_VERSION = pkgversion(TypstJlyfish)
 
-const APP_HELP = """
-$APP_NAME help
+julia_blue_hex = "#" * hex(Colors.JULIA_LOGO_COLORS.blue)
+
+const APP_HELP = styled"""
+{(foreground=$julia_blue_hex):$APP_NAME help}
     Prints this help message.
 
-$APP_NAME version
+{(foreground=$julia_blue_hex):$APP_NAME version}
     Prints the version of this application.
 """
-
-julia_blue_hex = "#" * hex(Colors.JULIA_LOGO_COLORS.blue)
 
 """
 Constructed at https://patorjk.com/software/taag/.
@@ -30,7 +30,7 @@ const LOGO_ART = styled"""
 function (@main)(args)
     if isempty(args)
         println(LOGO_ART)
-        println("Run `jlyfish help` for usage.")
+        println(styled"Run {(foreground=$julia_blue_hex):jlyfish help} for usage.")
         return
     end
 
@@ -49,9 +49,9 @@ function (@main)(args)
     #     app_compile(args)
 
     else
-        """
-        Unrecognised command: $command.
-        Run `$APP_NAME help` for a list of commands.
+        styled"""
+        Unrecognised command: {(foreground=$julia_blue_hex):$command}.
+        Run {(foreground=$julia_blue_hex):$APP_NAME help} for a list of commands.
         """ |> print
     end
 end
